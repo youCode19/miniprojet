@@ -1,0 +1,401 @@
+:root {
+    --bg-color: #e0e5ec;
+    --primary-color: #6c5ce7;
+    --secondary-color: #a29bfe;
+    --text-color: #2d3436;
+    --shadow-light: #ffffff;
+    --shadow-dark: #a3b1c6;
+    --success-color: #00b894;
+    --danger-color: #d63031;
+    --warning-color: #fdcb6e;
+    --info-color: #0984e3;
+}
+
+
+/* Base Styles */
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    padding-top: 20px; /* Assurez-vous que le header ne soit pas couvert */
+}
+
+/* Neumorphic Elements */
+.neumorphic {
+    background: var(--bg-color);
+    border-radius: 15px;
+    box-shadow: 8px 8px 15px var(--shadow-dark),
+                -8px -8px 15px var(--shadow-light);
+    border: none;
+    transition: all 0.3s ease;
+}
+
+.neumorphic-hover:hover {
+    box-shadow: 5px 5px 10px var(--shadow-dark),
+                -5px -5px 10px var(--shadow-light);
+}
+
+.neumorphic-pressed:active {
+    box-shadow: inset 5px 5px 10px var(--shadow-dark),
+                inset -5px -5px 10px var(--shadow-light);
+}
+
+.neumorphic-flat {
+    box-shadow: 3px 3px 6px var(--shadow-dark),
+                -3px -3px 6px var(--shadow-light);
+}
+
+/* Buttons */
+.btn {
+    border-radius: 10px;
+    padding: 10px 20px;
+    transition: all 0.3s ease;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: var(--secondary-color);
+    border-color: var(--secondary-color);
+}
+
+.btn-outline-primary {
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+}
+
+.btn-outline-primary:hover {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+/* Forms */
+.form-control {
+    background-color: var(--bg-color);
+    border: none;
+    box-shadow: inset 3px 3px 6px var(--shadow-dark),
+                inset -3px -3px 6px var(--shadow-light);
+    border-radius: 10px;
+    padding: 12px 15px;
+}
+
+.form-control:focus {
+    box-shadow: inset 5px 5px 10px var(--shadow-dark),
+                inset -5px -5px 10px var(--shadow-light);
+    outline: none; /* Supprime l'outline par défaut du navigateur */
+}
+
+/* Cards */
+.card {
+    border: none;
+    border-radius: 15px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.card-img-top {
+    border-radius: 15px 15px 0 0;
+}
+
+/* Navigation */
+.navbar {
+    padding: 15px;
+    position:fixed;
+}
+
+.nav-link {
+    padding: 10px 15px;
+    border-radius: 10px;
+}
+
+.nav-link.active {
+    box-shadow: inset 3px 3px 6px var(--shadow-dark),
+                inset -3px -3px 6px var(--shadow-light);
+}
+
+/* Badges */
+.badge {
+    border-radius: 10px;
+    padding: 5px 10px;
+}
+
+/* Alerts */
+.alert {
+    border: none;
+    border-radius: 10px;
+}
+
+.alert-primary {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+/* Product Elements */
+.price-tag {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+.rating-stars {
+    color: var(--warning-color);
+}
+
+.color-swatch {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    margin-right: 5px;
+    vertical-align: middle;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .neumorphic {
+        box-shadow: 5px 5px 10px var(--shadow-dark),
+                    -5px -5px 10px var(--shadow-light);
+    }
+    
+    .form-control {
+        padding: 10px 12px;
+    }
+}
+
+.video-background-container {
+    position: relative;
+    width: 100%;
+    height: 120vh; /* Garde la hauteur pour l'effet visuel */
+    overflow: hidden;
+}
+.backgroundvid {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: 1;
+    transform: translate(-50%, -50%);
+    object-fit: cover;
+}
+.video-overlay {
+    position: absolute;
+    top: 40%; left: 25%; width: 50%; height: 50%;
+    background: rgba(0, 0, 0, 0.3);
+    z-index: 2;
+}
+.carousel-on-video {
+    position: absolute;
+    top: 70%; left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    z-index: 3;
+}
+@media (max-width: 768px) {
+    .video-background-container { height: 40vh; }
+    .carousel-on-video { width: 100%; }
+}
+.carousel-control-prev,.carousel-control-next{
+    height: 50px;
+    width: 50px;
+    border-radius: 50px;
+    background: rgba(0, 0, 0, 0.3);
+}
+.carousel-control-prev:hover,.carousel-control-next:hover{
+    transform: scale(1.1);
+    background: rgba(0, 0, 0, 0.548);
+    transition: all 0.3s ease;
+}
+.carousel-control-prev-icon, .carousel-control-next-icon {
+    background-color: #fff;
+    border-radius: 50%;
+    padding: 10px;
+    width: 30px;
+    height: 30px;
+}
+
+/* Styles pour les produits */
+.product-image,
+.card-img-top,
+.product-card img,
+.product-card-sm img {
+    width: 100%;
+    height: 300px; /* Hauteur fixe pour une uniformité */
+    object-fit: cover;
+    border-radius: 12px;
+    background: #f4f4f4;
+    display: block;
+}
+.product-card, .product-card-sm {
+    border-radius: 15px;
+    box-shadow: 8px 8px 15px var(--shadow-dark),
+                -8px -8px 15px var(--shadow-light);
+    background: var(--bg-color);
+    transition: transform 0.2s;
+    /* Taille uniforme */
+    height: 420px;           /* Hauteur fixe pour toutes les cards */
+    max-height: 420px;
+    min-height: 420px;
+    font-size: larger;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 10px;
+    overflow: hidden;
+}
+.product-card .product-image,
+.product-card-sm .product-image {
+    width: 100%;
+    height: 220px;           /* Hauteur fixe pour l'image */
+    object-fit: cover;
+    border-radius: 12px;
+    background: #f4f4f4;
+    display: block;
+}
+
+.product-card .card-body,
+.product-card-sm .card-body {
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.product-image:hover,
+.card-img-top:hover,
+.product-card img:hover,
+.product-card-sm img:hover{
+    transform: scale(1.02);
+    /* animation: all 0.5s ease;  'animation' n'est pas une propriété valide pour 'all' */
+    transition: transform 0.5s ease; /* Utiliser transition pour un effet fluide */
+}
+.product-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin: 10px 0 5px 0;
+}
+.product-price {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: var(--primary-color);
+}
+.product-title:hover{
+    transform: scale(1.02);
+    /* animation: all 0.5s ease; */
+    transition: transform 0.5s ease;
+}
+
+/* NOUVEAUX STYLES POUR LES CARTES DE CATÉGORIE */
+.category-card {
+    display: flex; /* Utilise flexbox pour l'alignement */
+    flex-direction: column; /* Organise le contenu en colonne */
+    align-items: center; /* Centre horizontalement */
+    justify-content: center; /* Centre verticalement */
+    text-align: center;
+    text-decoration: none;
+    color: var(--text-color);
+    border-radius: 15px; /* Bordures arrondies pour la carte */
+    box-shadow: 8px 8px 15px var(--shadow-dark), -8px -8px 15px var(--shadow-light);
+    transition: all 0.3s ease;
+    padding: 15px; /* Augmente le padding interne */
+    min-height: 150px; /* Hauteur minimale pour les cartes */
+    aspect-ratio: 1 / 1; /* Force un ratio carré pour la carte */
+    /* Assure que le texte ne déborde pas */
+    overflow: hidden; 
+    text-overflow: ellipsis;
+    white-space: normal; /* Permet le retour à la ligne */
+}
+
+.category-card:hover {
+    transform: translateY(-5px) scale(1.02); /* Effet au survol */
+    box-shadow: 12px 12px 24px var(--shadow-dark), -12px -12px 24px var(--shadow-light);
+}
+
+.category-card .category-image {
+    width: 80px; /* Taille fixe pour l'image de l'icône */
+    height: 80px;
+    margin-bottom: 10px; /* Espace sous l'image */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--bg-color);
+    border-radius: 50%; /* Pour les rendre rondes si désiré */
+    box-shadow: inset 3px 3px 6px var(--shadow-dark), inset -3px -3px 6px var(--shadow-light); /* Effet inset pour le fond de l'icône */
+    padding: 10px; /* Padding interne pour l'icône */
+    flex-shrink: 0; /* Empêche l'image de rétrécir */
+}
+
+.category-card .category-image img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain; /* Assure que l'image tient dans le cadre sans être coupée */
+    border-radius: 0; /* Ne pas arrondir l'image elle-même si le conteneur est rond */
+    background: none; /* Pas de fond pour l'image */
+    height: auto; /* Laisse l'image s'adapter à la hauteur définie par max-height */
+}
+
+.category-card h3 {
+    font-size: 1rem; /* Taille de police pour le nom de la catégorie */
+    margin-bottom: 0;
+    color: var(--text-color);
+    font-weight: 500;
+    line-height: 1.2; /* Ajuste la hauteur de ligne pour un meilleur affichage sur 2 lignes */
+}
+
+/* Responsive adjustments for category cards */
+@media (max-width: 768px) {
+    .category-card {
+        padding: 10px;
+        min-height: 120px;
+    }
+    .category-card .category-image {
+        width: 60px;
+        height: 60px;
+    }
+    .category-card h3 {
+        font-size: 0.85rem;
+    }
+}
+@media (max-width: 576px) {
+    .category-card {
+        min-height: 100px;
+    }
+    .category-card .category-image {
+        width: 50px;
+        height: 50px;
+    }
+    .category-card h3 {
+        font-size: 0.8rem;
+    }
+}
+.autocomplete-suggestions {
+    background: #fff;
+    border: 1px solid #ddd;
+    max-height: 250px;
+    overflow-y: auto;
+    border-radius: 0 0 10px 10px;
+}
+.autocomplete-item {
+    padding: 8px 12px;
+    border-bottom: 1px solid #eee;
+}
+.autocomplete-item:last-child {
+    border-bottom: none;
+}
+.autocomplete-item:hover {
+    background: #f1f1f1;
+}
+.fab {
+    font-size: 1.5rem;
+    transition: color 0.3s ease;
+}
+.fab:hover {
+    color: var(--primary-color);
+}
