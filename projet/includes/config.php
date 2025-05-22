@@ -10,7 +10,7 @@ define('ENVIRONMENT', 'development'); // 'production' en live
 define('DB_HOST', 'localhost');
 define('DB_NAME', 'ecommerce_neumorphic');
 define('DB_USER', 'root'); // Jamais 'root' en production
-define('DB_PASS', 'youyou19'); // À remplacer par un mot de passe fort
+define('DB_PASS', ''); // À remplacer par un mot de passe fort
 define('DB_CHARSET', 'utf8mb4');
 
 // 3. Configuration du site
