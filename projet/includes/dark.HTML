@@ -1,0 +1,89 @@
+
+<style>
+ body.dark-mode {
+    /* Mode sombre */
+    --bg-color: #454546;
+    --text-color: #ecf0f1;
+    --card-bg: #535454;
+    --table-bg: #2e2e2e;
+    --shadow-light: #2d2d3a;
+    --shadow-dark: #000000;
+    --border-color: #444;
+  }
+
+  body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: all 0.3s ease;
+  }
+
+  .dark-toggle {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    background: var(--card-bg);
+    color: var(--text-color);
+    padding: 10px 15px;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 4px 4px 10px var(--shadow-dark), -4px -4px 10px var(--shadow-light);
+    cursor: pointer;
+    z-index: 999;
+  }
+
+  /* Cartes */
+  .card {
+    background-color: var(--card-bg);
+    color: var(--text-color);
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 4px 4px 12px var(--shadow-dark), -4px -4px 12px var(--shadow-light);
+    transition: all 0.3s ease;
+  }
+
+  /* Tableaux */
+  table {
+    width: 100%;
+    background-color: var(--table-bg);
+    border-collapse: collapse;
+    box-shadow: 4px 4px 12px var(--shadow-dark), -4px -4px 12px var(--shadow-light);
+    color: var(--text-color);
+    margin: 20px 0;
+  }
+
+  th, td {
+    padding: 12px;
+    border: 1px solid var(--border-color);
+  }
+
+  thead {
+    background-color: var(--shadow-light);
+  }
+
+  tbody tr:hover {
+    background-color: rgba(100, 100, 100, 0.1);
+  }
+</style>
+
+<!-- Dark mode toggle button -->
+<button class="dark-toggle" id="toggle-dark-mode">🌙</button>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const prefersDark = localStorage.getItem("darkMode") === "true";
+    const body = document.body;
+    const toggle = document.getElementById("toggle-dark-mode");
+
+    if (prefersDark) {
+      body.classList.add("dark-mode");
+      toggle.textContent = "☀️";
+    }
+
+    toggle.addEventListener("click", () => {
+      body.classList.toggle("dark-mode");
+      const isDark = body.classList.contains("dark-mode");
+      toggle.textContent = isDark ? "☀️ " : "🌙 ";
+      localStorage.setItem("darkMode", isDark);
+    });
+  });
+</script>
